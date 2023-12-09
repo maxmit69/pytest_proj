@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pytest-proj"
+version = "0.1.0"
+description = "homework_pytest_proj"
+authors = ["Sergei_Aristov <maxmit83@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+colorama = "0.4.6"
+coverage = "7.0.5"
+iniconfig = "2.0.0"
+packaging = "23.0"
+pluggy = "1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "4.0.0"
+pytest = "7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
