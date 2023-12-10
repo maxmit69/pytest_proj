@@ -1,5 +1,6 @@
 from utils import arrs
 from utils import dicts
+import pytest
 
 
 def test_get():
@@ -19,3 +20,15 @@ def test_dicts():
     assert dicts.get_val({"a": 1, "b": 2, "c": 3}, "c", "c") == 3
     assert dicts.get_val({}, "a", "c") == "c"
     assert dicts.get_val({"a": 1, "b": 2, "c": 3}, None, "c") == "c"
+
+
+@pytest.fixture
+def my_dict():
+    return {"a": 1, "b": 2, "c": 3}
+
+
+def test_dicts_get_val(my_dict):
+    assert dicts.get_val(my_dict, "a", "c") == 1
+    assert dicts.get_val(my_dict, "c", "c") == 3
+    assert dicts.get_val(my_dict, None, "c") == "c"
+
